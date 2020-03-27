@@ -7,15 +7,15 @@ package entity;
 
 import java.io.Serializable;
 import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 /**
  *
- * @author user
+ * @author artjo
  */
 @Entity
 public class User implements Serializable {
@@ -23,21 +23,22 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String login;
+    private  String login;
+    @Column(unique = true)
     private String password;
+    private String salts;
     private boolean active;
-    @OneToOne
-    private Customer customer;
+    private Person person;
 
     public User() {
     }
 
-    public User(Long id, String login, String password, boolean active, Customer customer) {
-        this.id = id;
+    public User(String login, String password, String salts, boolean active, Person person) {
         this.login = login;
         this.password = password;
+        this.salts = salts;
         this.active = active;
-        this.customer = customer;
+        this.person = person;
     }
 
     public Long getId() {
@@ -64,6 +65,14 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    public String getSalts() {
+        return salts;
+    }
+
+    public void setSalts(String salts) {
+        this.salts = salts;
+    }
+
     public boolean isActive() {
         return active;
     }
@@ -72,27 +81,23 @@ public class User implements Serializable {
         this.active = active;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public Person getPerson() {
+        return person;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" + "id=" + id + ", login=" + login + ", password=" + password + ", active=" + active + ", customer=" + customer + '}';
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 79 * hash + Objects.hashCode(this.id);
-        hash = 79 * hash + Objects.hashCode(this.login);
-        hash = 79 * hash + Objects.hashCode(this.password);
-        hash = 79 * hash + (this.active ? 1 : 0);
-        hash = 79 * hash + Objects.hashCode(this.customer);
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.id);
+        hash = 97 * hash + Objects.hashCode(this.login);
+        hash = 97 * hash + Objects.hashCode(this.password);
+        hash = 97 * hash + Objects.hashCode(this.salts);
+        hash = 97 * hash + (this.active ? 1 : 0);
+        hash = 97 * hash + Objects.hashCode(this.person);
         return hash;
     }
 
@@ -117,13 +122,30 @@ public class User implements Serializable {
         if (!Objects.equals(this.password, other.password)) {
             return false;
         }
+        if (!Objects.equals(this.salts, other.salts)) {
+            return false;
+        }
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
-        if (!Objects.equals(this.customer, other.customer)) {
+        if (!Objects.equals(this.person, other.person)) {
             return false;
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "User{" + "id=" + id 
+                + ", login=" + login 
+                + ", password=" + password 
+                + ", salts=" + salts 
+                + ", active=" + active 
+                + ", person=" + person.getFirstname()
+                + " " + person.getLastname()
+                + '}';
+    }
+
+    
     
 }
