@@ -23,7 +23,7 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private  String login;
+    private String login;
     @Column(unique = true)
     private String password;
     private String salts;
@@ -136,16 +136,14 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id 
-                + ", login=" + login 
-                + ", password=" + password 
-                + ", salts=" + salts 
-                + ", active=" + active 
+        return "User{" + "id=" + id
+                + ", login=" + login
+                + ", password=" + password
+                + ", salts=" + salts
+                + ", active=" + active
                 + ", person=" + person.getFirstname()
                 + " " + person.getLastname()
                 + '}';
     }
 
-    
-    
 }

@@ -29,8 +29,7 @@ import util.EncryptPass;
 @WebServlet(name = "LoginController", urlPatterns = {
     "/createUser",
     "/login",
-    "/logout",
-})
+    "/logout",})
 public class LoginController extends HttpServlet {
 
     @EJB
@@ -51,6 +50,8 @@ public class LoginController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String json = "";
+        HttpSession session = request.getSession(true);
+        session = request.getSession(false);
         JsonObjectBuilder job = Json.createObjectBuilder();
         EncryptPass ep = new EncryptPass();
         String path = request.getServletPath();
@@ -165,7 +166,7 @@ public class LoginController extends HttpServlet {
                     }
                     break;
                 }
-                HttpSession session = request.getSession(true);
+                session = request.getSession(true);
                 session.setAttribute("user", user);
                 JsonUserBuilder jsonUserBuilder = new JsonUserBuilder();
                 job.add("actionStatus", "true")
@@ -178,7 +179,18 @@ public class LoginController extends HttpServlet {
                 }
                 break;
             case "/logout":
-
+                session = request.getSession(false);
+                if (session != null) {
+                    session.invalidate();
+                }
+                job.add("actionStatus", "true")
+                        .add("user", "null")
+                        .add("authStatus", "false")
+                        .add("data", "null");
+                try (Writer writer = new StringWriter()) {
+                    Json.createWriter(writer).write(job.build());
+                    json = writer.toString();
+                }
                 break;
         }
         // Отлавливаем json переменную, проверяем содержание 

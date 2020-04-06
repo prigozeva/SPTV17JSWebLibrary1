@@ -3,22 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/NetBeansProjects/SPTV17JSWebLibrary1/web/js/UserModule.js</file>
-            <file>file:/C:/NetBeansProjects/SPTV17JSWebLibrary1/src/java/entity/User.java</file>
-            <file>file:/C:/NetBeansProjects/SPTV17JSWebLibrary1/src/java/session/AbstractFacade.java</file>
-            <file>file:/C:/NetBeansProjects/SPTV17JSWebLibrary1/src/java/entity/Customer.java</file>
-            <file>file:/C:/NetBeansProjects/SPTV17JSWebLibrary1/web/css/main.css</file>
-            <file>file:/C:/NetBeansProjects/SPTV17JSWebLibrary1/src/java/jsoncreator/CustomerJsonBuilder.java</file>
-            <file>file:/C:/NetBeansProjects/SPTV17JSWebLibrary1/src/java/session/CustomerFacade.java</file>
-            <file>file:/C:/NetBeansProjects/SPTV17JSWebLibrary1/web/js/AuthModule.js</file>
-            <file>file:/C:/NetBeansProjects/SPTV17JSWebLibrary1/web/js/main.js</file>
-            <file>file:/C:/NetBeansProjects/SPTV17JSWebLibrary1/web/proba.html</file>
-            <file>file:/C:/NetBeansProjects/SPTV17JSWebLibrary1/src/java/session/UserFacade.java</file>
             <file>file:/C:/NetBeansProjects/SPTV17JSWebLibrary1/web/index.html</file>
-            <file>file:/C:/NetBeansProjects/SPTV17JSWebLibrary1/src/java/entity/Address.java</file>
-            <file>file:/C:/NetBeansProjects/SPTV17JSWebLibrary1/src/java/session/AddressFacade.java</file>
-            <file>file:/C:/NetBeansProjects/SPTV17JSWebLibrary1/web/js/HttpModule.js</file>
-            <file>file:/C:/NetBeansProjects/SPTV17JSWebLibrary1/src/java/jsoncreator/UserJsonBuilder.java</file>
+            <file>file:/C:/NetBeansProjects/SPTV17JSWebLibrary1/web/proba.html</file>
+            <file>file:/C:/NetBeansProjects/SPTV17JSWebLibrary1/src/java/entity/Person.java</file>
         </group>
     </open-files>
 </project-private>

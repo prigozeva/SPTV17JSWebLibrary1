@@ -45,7 +45,6 @@ public class Person implements Serializable {
         this.room = room;
     }
 
-
     public Long getId() {
         return id;
     }
@@ -167,7 +166,5 @@ public class Person implements Serializable {
     public String toString() {
         return "Person{" + "id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email + ", city=" + city + ", street=" + street + ", house=" + house + ", room=" + room + '}';
     }
-    
-    
-   
+
 }

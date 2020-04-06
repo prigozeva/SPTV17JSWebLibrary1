@@ -1,4 +1,3 @@
-
 import {authModule} from './AuthModule.js';
 
 document.getElementById('enter-menu').onclick = function () {
@@ -7,12 +6,13 @@ document.getElementById('enter-menu').onclick = function () {
 }
 document.getElementById('sysout').onclick = function () {
     toogleMenuActive('sysout');
+    authModule.sysLogout();
 }
-document.getElementById('active').onclick = function () {
-    toogleMenuActive('active');
+document.getElementById('printNewBookForm').onclick = function () {
+    toogleMenuActive('printNewBookForm');
 }
-document.getElementById('link').onclick = function () {
-    toogleMenuActive('link');
+document.getElementById('printListBooksForm').onclick = function () {
+    toogleMenuActive('printListBooksForm');
 }
 
 function toogleMenuActive(elementId) {
@@ -28,4 +28,4 @@ function toogleMenuActive(elementId) {
         }
     }
 }
-
+authModule.toogleVisibleMenus();

@@ -39,8 +39,8 @@ public class EncryptPass {
         } catch (NoSuchAlgorithmException e) {
             java.util.logging.Logger.getLogger(EncryptPass.class.getName())
                     .log(Level.SEVERE,
-                             "Не поддерживается алгоритм хеширования",
-                             e
+                            "Не поддерживается алгоритм хеширования",
+                            e
                     );
             return null;
         }

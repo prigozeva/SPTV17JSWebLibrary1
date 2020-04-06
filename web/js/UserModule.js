@@ -58,7 +58,7 @@ import {httpModule} from './HttpModule.js';
                         userModule.printRegistrationForm();
                 }
                 document.getElementById('info').innerHTML = 'Новый пользователь добавлен';
-                        document.getElementById('content').innerHTML = '';
+                        document.getElementById('content').innerHTML = ' ';
                 })
 
         }
